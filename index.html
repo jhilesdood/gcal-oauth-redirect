@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Google OAuth Redirect</title>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const code = params.get('code');
+
+      if (code) {
+        // Redirect to Lovable’s OAuth endpoint
+        window.location.href = `https://bsorbqtgfefufidcutgp.supabase.co/functions/v1/gcal-oauth?code=${code}`;
+      } else {
+        document.body.innerHTML = "Waiting for Google OAuth code...";
+      }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
